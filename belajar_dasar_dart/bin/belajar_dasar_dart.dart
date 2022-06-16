@@ -1,7 +1,7 @@
 /* Ini komentar */
 // Ini juga komentar
 
-import 'suhu.dart';
+import 'fungsi.dart';
 
 /// Fungsi [main] adalah fungsi utama, yang memakai fungsi [eksepsi]
 void main(List<String> arguments) {
@@ -10,7 +10,9 @@ void main(List<String> arguments) {
   // boleyan();
   // eksepsi();
   
-  suhu();
+  printTambah();
+
+  // suhu();
 }
 
 void eksepsi() {
@@ -31,6 +33,8 @@ void eksepsi() {
   } catch (e, stack) {
     print("Ini informasi eksepsinya ditangkep. Isinya : ${e.toString()}");
     print("Stack trace $stack");
+  } finally {
+    print("Hoho");
   }
 }
 
@@ -45,13 +49,13 @@ void setring() {
   print(deskripsi);
 
   var data = """
-  Hai hai
-  Haii, Hanaku ❤️""";
+  Hai hai $nama
+  Haii, Hanaku \u2665 ❤️""";
 
   print(data);
 
   // SKIP INTERPOLASI
-  var stringBebas = r"$heheheheh adjdkdjkdsfjdskjsfd"; // Dianggap string
+  var stringBebas = r'$heheheheh \u2665 adjdkdjkdsfjdskjsfd'; // Dianggap string
   print(stringBebas);
 }
 
@@ -59,6 +63,16 @@ void boleyan() {
   bool isHanaLikeBayu = !false; // true
   bool isBayuLikeHana = (isHanaLikeBayu && false) || true;
   print(isBayuLikeHana);
+
+  Object haha = 123;
+  print(haha is int);
+  print(haha is num);
+  print(haha is String);
+
+  print(haha is! String);
+
+  var x = haha as int;
+  print(x + 5);
 }
 
 void angka() {
